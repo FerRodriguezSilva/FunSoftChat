@@ -1,33 +1,26 @@
 import saludar from "./saludador.js";
 
 const button = document.querySelector("button");
-const botonSaludoPorNombre = document.querySelector("#saludo-personalizado");
-const botonSaludoPorGenero =document.querySelector("#saludo-genero");
+const botonSaludoPorEdad =document.querySelector("#saludo-edad");
 const inputNombre = document.querySelector("#nombre");
 const inputGenero =document.querySelector("#genero");
-const inputNombreGenero = document.querySelector("#nombre-genero");
+const inputEdad=document.querySelector("#edad");
+
 
 button.addEventListener("click", () => {
   const saludo = saludar();
   alert(saludo); // Muestra el saludo en una alerta
 });
 
-botonSaludoPorNombre.addEventListener("click", () => {
-  const nombre = inputNombre.value.trim();
-  if (nombre) {
-    alert(`Hola, ${nombre}!`);
-  } else {
-    alert("Por favor, escribe tu nombre.");
-  }
-});
 
-botonSaludoPorGenero.addEventListener("click", ()=>{
+
+botonSaludoPorEdad.addEventListener("click", ()=>{
   const genero=inputGenero.value.trim();
-  const nombre=inputNombreGenero.value.trim();
-  if(nombre,genero){
-    alert(`Hola, ${nombre}!, genero: ${genero},`);
-
-  }else{
-    alert("Ingrese su nombre y genero: ");
+  const nombre=inputNombre.value.trim();
+  const edad =inputEdad.value.trim();
+  if (nombre && genero && edad) {
+    alert(`Hola, ${nombre}!, género: ${genero}, edad: ${edad}`);
+  } else {
+    alert("Por favor, ingrese su nombre, género y edad.");
   }
 })
